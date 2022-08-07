@@ -20,7 +20,7 @@ I have made several modifications:
 
 <br><br>
 <h1>Precompiled version</h1>
-In the precompile folder there is a version already compiled to be saved with the flash download tool 3.9.2. It is a version with 320x200 resolution with the demo games in FLASH.<br><br>
+In the precompile folder there is a version already compiled to be saved with the flash download tool 3.9.2. It is a version with 320x200 resolution (DAC 3 bits, 8 colors) with the demo games in FLASH.<br><br>
 <a href='https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200'>https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200</a>
 <br><br>
 We must choose the ESP32 type:
