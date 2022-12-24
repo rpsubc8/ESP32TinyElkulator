@@ -1,4 +1,4 @@
-#ESP32 Tiny Elkulator
+# ESP32 Tiny Elkulator
 Port x86 Elkulator Acorn Electron version 0.5 (author Tom Walker) to TTGO VGA32 v1.x (1.0, 1.1, 1.2, 1.4) board with ESP32.
 <center><img src='preview/elkulatorpreview.gif'></center>
 <br>
