@@ -19,7 +19,7 @@ He realizado varias modificaciones:.
 
 
 <br><br>
-<h1>Versión precompilada/h1>
+<h1>Versión precompilada</h1>
   En la carpeta <b>precompile</b> hay una versión ya compilada para ser guardada con la herramienta de descarga flash 3.9.2. Es una versión con resolución 320x200 (DAC 3 bits, 8 colores) con los juegos de demostración en FLASH.<br><br>
 <a href='https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200'>https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200</a>
 <br><br>
