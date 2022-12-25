@@ -15,6 +15,7 @@ I have made several modifications:
  <li>Video mode 320x200</li>
  <li>Screen scale</li>
  <li>Precompiled version (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colors)</li>
+ <li>No sound emulation for the time being.</li>
 </ul>
 
 
