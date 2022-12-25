@@ -8,7 +8,7 @@ He realizado varias modificaciones:.
  <li>Usa un sólo core</li>
  <li>OSD de bajos recursos</li>
  <li>Proyecto compatible con Arduino IDE y Platform IO</li>
- <li>Caraga de ROMs desde Flash progmem</li>
+ <li>Carga de ROMs desde Flash progmem</li>
  <li>Carga de SNA (version 0.5) desde Flash progmem</li>
  <li>Carga de discos ADF disk desde Flash progmem</li>
  <li>Soporta 8 y 64 colores (librería reducida de Ricardo Massaro)</li>
