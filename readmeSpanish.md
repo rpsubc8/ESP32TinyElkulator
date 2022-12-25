@@ -13,8 +13,9 @@ He realizado varias modificaciones:.
  <li>Carga de discos ADF disk desde Flash progmem</li>
  <li>Soporta 8 y 64 colores (librería reducida de Ricardo Massaro)</li>
  <li>Modo de video 320x200</li>
- <li>Permite escala de pantalla en 320x200. Recordar que el acorn tiene 256 lineas./li>
+ <li>Permite escala de pantalla en 320x200. Recordar que el acorn tiene 256 lineas.</li>
  <li>Versión precompilada (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colores)</li>
+ <li>Sin emulación de sonido, por ahora.</li>
 </ul>
 
 
