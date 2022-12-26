@@ -104,7 +104,7 @@ El archivo <b>gbConfig.h</b> se seleccionan las opciones:
 
 <br><br>
 <h1>Aplicaciones Test</h1>
-Se han dejado múltiples juegos en formato SNA:
+Se han dejado múltiples juegos en formato SNA (versión 0.5):
 <ul>
  <li>Craze Erider</li>
  <li>Space Invaders</li>
