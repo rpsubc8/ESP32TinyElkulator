@@ -21,9 +21,9 @@ I have made several modifications:
    <center><img src='preview/keymatrix.gif'></center>
    <pre>
     Missing:
-    Fila 0: Copy (bit 1) and NC (bit 2, No connection, no need)
-    Fila 2: NC (bit 3, No connection, no need)
-    Fila 3: ; (bit 2)    
+    Row 0: Copy (bit 1) and NC (bit 2, No connection, no need)
+    Row 2: NC (bit 3, No connection, no need)
+    Row 3: ; (bit 2)    
    </pre>  
  </li> 
 </ul>
