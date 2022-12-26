@@ -16,6 +16,16 @@ He realizado varias modificaciones:.
  <li>Permite escala de pantalla en 320x200. Recordar que el acorn tiene 256 lineas.</li>
  <li>Versión precompilada (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colores)</li>
  <li>Sin emulación de sonido, por ahora.</li>
+ <li>
+   Faltan teclas por mapear:
+   <center><img src='preview/keymatrix.gif'></center>
+   <pre>
+    Faltan:
+    Fila 0: Copy (bit 1) y NC (bit 2, Sin conexión, no se necesita)
+    Fila 2: NC (bit 3, Sin conexión, no se necesita)
+    Fila 3: ; (bit 2)    
+   </pre>  
+ </li>
 </ul>
 
 
