@@ -44,6 +44,17 @@ Se requiere:
 
 
 <br><br>
+<h1>PlatformIO</h1>
+Se debe instalar el PLATFORMIO 2.5.0 desde las extensiones del Visual Studio. Se requiere también Espressif32 v3.5.0. 
+<center><img src='previewPlatformIOinstall.gif'></center>
+Luego se seleccionará el directorio de trabajo <b>TinyElkulatorttgovga32</b>.
+Debemos modificar el fichero <b>platformio.ini</b> la opción <b>upload_port</b> para seleccionar el puerto COM donde tenemos nuestra placa TTGO VGA32.
+<center><img src='preview/previewPlatformIO.gif'></center>
+Luego procederemos a compilar y subir a la placa. No se usa particiones, así que debemos subir todo el binario compilado.
+Está todo preparado para no tener que instalar las librerias de bitluni.
+
+
+<br><br>
 <h1>Arduino IDE</h1>
 Todo el proyecto es compatible con la estructura de Arduino 1.8.11.
 Tan sólo tenemos que abrir el <b>elkulator.ino</b> del directorio <b>elkulator</b>.
@@ -98,12 +109,20 @@ Se han dejado múltiples cartuchos (16 KB):
  <li>Snapper</li>
 </ul>
 
-Se han dejado múltiples cartucho (32 KB):
+Se han dejado múltiples cartuchos (32 KB):
 <ul>
  <li>Count Down</li>
  <li>Star Ship Command</li>
  <li>LISP</li> 
 </ul>
+
+Se ha dejado el disco de Wellcome. Para testear desde el emulador:
+<pre>
+ *CAT
+ *!BOOT
+</pre>
+
+
 
 
 <br><br>
