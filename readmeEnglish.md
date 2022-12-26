@@ -108,7 +108,7 @@ The file <b>gbConfig.h</b> options are selected:
 
 <br><br>
 <h1>Test applications</h1>
-Multiple games have been left in SNA format:
+Multiple games have been left in SNA format (version 0.5):
 <ul>
  <li>Craze Erider</li>
  <li>Space Invaders</li>
