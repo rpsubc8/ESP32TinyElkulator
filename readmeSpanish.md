@@ -29,3 +29,84 @@ Debemos elegir el tipo ESP32:
 A continuación, seleccione los archivos como se muestra en la captura de pantalla adjunta, con los mismos valores de desplazamiento:
 <center><img src='preview/flash01.gif'></center>
 Y pulsaremos start. Si todo ha sido correcto, solo tendremos que reiniciar el ESP32.
+
+
+<br><br>
+<h1>Requerimientos</h1>
+Se requiere:
+ <ul>
+  <li>TTGO VGA32 v1.x (1.0, 1.1, 1.2, 1.4)</li>
+  <li>Visual Studio 1.66.1 PLATFORMIO 2.5.0 Espressif32 v3.5.0</li>
+  <li>Arduino IDE 1.8.11 Espressif System 1.0.6</li>
+  <li>Librería reducida Arduino bitluni 0.3.3 (incluida en proyecto)</li>  
+ </ul>
+<center><img src='preview/ttgovga32v12.jpg'></center>
+
+
+<br><br>
+<h1>Arduino IDE</h1>
+Todo el proyecto es compatible con la estructura de Arduino 1.8.11.
+Tan sólo tenemos que abrir el <b>elkulator.ino</b> del directorio <b>elkulator</b>.
+<center><img src='preview/previewArduinoIDEpreferences.gif'></center>
+Debemos instalar las extensiones de spressif (v1.0.6) en el gestor de urls adicionales de tarjetas <b>https://dl.espressif.com/dl/package_esp32_index.json</b>
+Para el modo normal, ya está preparado el proyecto, de forma que no se necesita ninguna librería de bitluni.
+Lo podemos hacer desde el administrador de bibliotecas.
+Debemos desactivar la opción de PSRAM, y en caso de superar 1 MB de binario, seleccionar 4 MB de partición a la hora de subir. Aunque el código no use PSRAM, si la opción está activa y nuestro ESP32 no dispone de ella, se generará una excepción y reinicio del mismo en modo bucle.
+
+
+<br><br>
+<h1>Usabilidad</h1>
+Se permite cargar:
+ <ul>
+  <li>Snapshots SNA (version 0.5)</li> 
+  <li>Cartuchos 16 KB y 32 KB</li>
+  <li>Discos formato ADF</li>
+ </ul>
+ Se dispone de un OSD básico de bajos recursos, es decir, muy simple, que se visualiza pulsando la tecla <b>F1</b>.
+ <center><img src='preview/previewOSD.gif'></center>
+ Los ficheros deben ser convertidos a .h en hexadecimal. Puede usarse la herramienta online:<br>
+ <a href='http://tomeko.net/online_tools/file_to_hex.php?lang=en'>http://tomeko.net/online_tools/file_to_hex.php?lang=en</a>
+
+
+<br><br>
+<h1>Opciones</h1>
+El archivo <b>gbConfig.h</b> se seleccionan las opciones:
+<ul>  
+ <li><b>use_lib_320x200:</b> Modo 320x200</li>
+ <li><b>use_lib_vga8colors:</b> Modo 8 colores (3 bits RGB) o 64 colores (6 bits RRGGBB)</li>
+ <li><b>use_lib_log_serial:</b> Se envian logs por puerto serie usb</li>
+ <li><b>FIX_PERIBOARD_NOT_INITING:</b> Solución de David Crespo Tascón para teclados que no se inicializan.</li>
+ <li><b>gb_ms_keyboard:</b> Se debe especificar el número de milisegundos de polling para el teclado.</li> 
+</ul>
+
+
+
+<br><br>
+<h1>Aplicaciones Test</h1>
+Se han dejado múltiples juegos en formato SNA:
+<ul>
+ <li>Craze Erider</li>
+ <li>Space Invaders</li>
+ <li>Killer gorilla</li>
+ <li>Stock car</li>
+ <li>Felix</li> 
+</ul>
+
+Se han dejado múltiples cartuchos (16 KB):
+<ul>
+ <li>Hopper</li>
+ <li>Snapper</li>
+</ul>
+
+Se han dejado múltiples cartucho (32 KB):
+<ul>
+ <li>Count Down</li>
+ <li>Star Ship Command</li>
+ <li>LISP</li> 
+</ul>
+
+
+<br><br>
+<h1>DIY circuito</h1>
+Si no queremos usar una placa TTGO VGA32 v1.x, podemos construirla siguiendo el esquema de <b>fabgl</b>:
+<center><img src='preview/fabglcircuit.gif'></center>
