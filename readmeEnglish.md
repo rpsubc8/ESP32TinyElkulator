@@ -16,6 +16,16 @@ I have made several modifications:
  <li>Screen scale</li>
  <li>Precompiled version (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colors)</li>
  <li>No sound emulation for the time being.</li>
+ <li>
+   There are no keys to be mapped:
+   <center><img src='preview/keymatrix.gif'></center>
+   <pre>
+    Missing:
+    Fila 0: Copy (bit 1) and NC (bit 2, No connection, no need)
+    Fila 2: NC (bit 3, No connection, no need)
+    Fila 3: ; (bit 2)    
+   </pre>  
+ </li> 
 </ul>
 
 
