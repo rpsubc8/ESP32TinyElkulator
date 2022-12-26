@@ -29,3 +29,104 @@ We must choose the ESP32 type:
 Subsequently, select the files as shown in the attached screenshot, with the same offset values:
 <center><img src='preview/flash01.gif'></center>
 And we will press start. If everything has been correct, we will only have to restart the ESP32.
+
+
+
+<br><br>
+<h1>Requirements</h1>
+Required:
+ <ul>
+  <li>TTGO VGA32 v1.x (1.0, 1.1, 1.2, 1.4)</li>
+  <li>Visual Studio 1.66.1 PLATFORMIO 2.5.0 Espressif32 v3.5.0</li>
+  <li>Arduino IDE 1.8.11 Espressif System 1.0.6</li>
+  <li>Arduino bitluni 0.3.3 reduced library (included in project)</li>
+ </ul>
+<center><img src='preview/ttgovga32v12.jpg'></center>
+
+
+<br><br>
+<h1>PlatformIO</h1>
+PLATFORMIO 2.5.0 must be installed from the Visual Studio extensions. Espressif32 v3.5.0 is also required. 
+<center><img src='preview/previewPlatformIOinstall.gif'></center>
+Then the working directory <b>TinyElkulatorttgovga32</b> will be selected.
+We must modify the file <b>platformio.ini</b> the option <b>upload_port</b> to select the COM port where we have our TTGO VGA32 board.
+<center><img src='preview/previewPlatformIO.gif'></center>
+Then we will proceed to compile and upload to the board. No partitions are used, so we must upload all the compiled binary.
+Everything is prepared so we don't have to install the bitluni libraries.
+
+
+
+<br><br>
+<h1>Arduino IDE</h1>
+The whole project is compatible with the structure of Arduino 1.8.11.
+We only have to open the <b>elkulator.ino</b> of the <b>elkulator</b> directory.
+<center><img src='preview/previewArduinoIDEpreferences.gif'></center>
+We must install the spressif (v1.0.6) extensions in the additional card url manager <b>https://dl.espressif.com/dl/package_esp32_index.json</b>
+For the normal mode, the project is already prepared, so that no bitluni library is needed.
+We can do it from the library manager.
+We must deactivate the PSRAM option, and in case of exceeding 1 MB of binary, select 4 MB of partition when uploading. Although the code does not use PSRAM, if the option is active and our ESP32 does not have it, an exception will be generated and it will be restarted in loop mode.
+
+
+
+<br><br>
+<h1>Usability</h1>
+Loading is allowed:
+ <ul>
+  <li>Snapshots SNA (version 0.5)</li>    
+  <li>Cartuchos 16 KB y 32 KB</li>
+  <li>ADF disks format</li> 
+ </ul>
+ There is a basic OSD of low resources, that is to say, very simple, that is visualized by pressing the key <b>F1</b>.
+ <center><img src='preview/previewOSD.gif'></center>  
+ The files must be converted to .h in hexadecimal. You can use the online tool:<br>
+ <a href='http://tomeko.net/online_tools/file_to_hex.php?lang=en'>http://tomeko.net/online_tools/file_to_hex.php?lang=en</a>
+
+
+
+
+<br><br>
+<h1>Options</h1>
+The file <b>gbConfig.h</b> options are selected:
+<ul>   
+ <li><b>use_lib_320x200:</b> 320x200 mode</li>
+ <li><b>use_lib_vga8colors:</b> 8-color (3-bit RGB) or 64-color (6-bit RRGGBB) mode</li>
+ <li><b>use_lib_log_serial:</b> Logs are sent by serial port usb</li>
+ <li><b>FIX_PERIBOARD_NOT_INITING:</b> David Crespo Tascón's solution for keyboards that do not initialize.</li>
+ <li><b>gb_ms_keyboard:</b> You must specify the number of milliseconds of polling for the keyboard.</li>
+</ul>
+
+
+<br><br>
+<h1>Test applications</h1>
+Multiple games have been left in SNA format:
+<ul>
+ <li>Craze Erider</li>
+ <li>Space Invaders</li>
+ <li>Killer gorilla</li>
+ <li>Stock car</li>
+ <li>Felix</li>
+</ul>
+
+Multiple cartridges (16 KB) have been left behind:
+<ul>
+ <li>Hopper</li>
+ <li>Snapper</li>
+</ul>
+
+Multiple cartridges (32 KB) have been left behind:
+<ul>
+ <li>Count Down</li>
+ <li>Star Ship Command</li>
+ <li>LISP</li>
+</ul>
+
+The Wellcome disc has been left behind. For testing from the emulator:
+<pre>
+ *CAT
+ *!BOOT
+</pre>
+
+<br><br>
+<h1>DIY circuit</h1>
+If we don't want to use a TTGO VGA32 v1.x board, we can build it following fabgl's schematic:
+<center><img src='preview/fabglcircuit.gif'></center>
