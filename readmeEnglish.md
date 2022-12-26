@@ -73,8 +73,8 @@ We must deactivate the PSRAM option, and in case of exceeding 1 MB of binary, se
 Loading is allowed:
  <ul>
   <li>Snapshots SNA (version 0.5)</li>    
-  <li>Cartuchos 16 KB y 32 KB</li>
-  <li>ADF disks format</li> 
+  <li>16 KB and 32 KB cartridges</li>
+  <li>ADF format discs</li> 
  </ul>
  There is a basic OSD of low resources, that is to say, very simple, that is visualized by pressing the key <b>F1</b>.
  <center><img src='preview/previewOSD.gif'></center>  
