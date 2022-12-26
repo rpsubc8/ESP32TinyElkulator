@@ -46,7 +46,7 @@ Se requiere:
 <br><br>
 <h1>PlatformIO</h1>
 Se debe instalar el PLATFORMIO 2.5.0 desde las extensiones del Visual Studio. Se requiere también Espressif32 v3.5.0. 
-<center><img src='previewPlatformIOinstall.gif'></center>
+<center><img src='preview/previewPlatformIOinstall.gif'></center>
 Luego se seleccionará el directorio de trabajo <b>TinyElkulatorttgovga32</b>.
 Debemos modificar el fichero <b>platformio.ini</b> la opción <b>upload_port</b> para seleccionar el puerto COM donde tenemos nuestra placa TTGO VGA32.
 <center><img src='preview/previewPlatformIO.gif'></center>
