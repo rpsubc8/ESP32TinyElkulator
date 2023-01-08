@@ -327,8 +327,12 @@ void setup()
   //vga_init(pin_config,vga_mode_200x150,false);  
   #ifdef use_lib_log_serial
    Serial.printf("Antes vga\n");
-  #endif 
-  vga_init(pin_config,VgaMode_vga_mode_320x200,false); //Llamada en C   
+  #endif
+  
+  #ifdef use_lib_vga320x200
+   vga_init(pin_config,VgaMode_vga_mode_320x200,false); //Llamada en C   
+  #endif
+   
   #ifdef use_lib_log_serial
    Serial.printf("Despues vga\n"); 
   #endif 

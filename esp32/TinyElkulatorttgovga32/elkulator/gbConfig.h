@@ -1,6 +1,12 @@
 #ifndef _GB_CONFIG_H
  #define _GB_CONFIG_H
  
+ //Not use double numbers (IEEE not fpu) calculate vga frequency
+ //#define use_lib_fix_double_precision
+
+ //Debug i2s bitluni vga frequency
+ //#define use_lib_debug_i2s
+
  //La placa WEMOS aun no esta. No usar
  //#define use_lib_board_wemos
 
@@ -13,9 +19,8 @@
  //no usar cinta
  #define use_lib_no_tape
  
- //Selecionar solo uno (use_lib_200x150 o use_lib_320x200)
- //#define use_lib_200x150
- #define use_lib_320x200
+ //Selecionar modo video, solo uno (use_lib_vga320x200) 
+ #define use_lib_vga320x200
 
  //Usar 8 colores de salida
  //#define use_lib_vga8colors
@@ -55,7 +60,7 @@
  //buffer look y lookup2 de 32 bits
  #define use_lib_optimize_lookup_32bits
  
- //Usa 200 lines en vez de 256
+ //Fuerza uso de 200 lineas en vez de 256 en pantalla
  #define use_lib_320x200 
 
 

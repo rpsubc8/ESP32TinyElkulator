@@ -76,14 +76,14 @@
 #include <driver/periph_ctrl.h>
 
 #if ARDUINO_ARCH_ESP32   // compiling under Arduino Core
-#include <Arduino.h>
-#include <rom/lldesc.h>
-#define DELAY(n) delay(n)
+ #include <Arduino.h>
+ #include <rom/lldesc.h>
+ #define DELAY(n) delay(n)
 #else                    // compiling under pure ESP-IDF
-#include <esp32/rom/lldesc.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-#define DELAY(n) vTaskDelay((n) / portTICK_PERIOD_MS)
+ #include <esp32/rom/lldesc.h>
+ #include <freertos/FreeRTOS.h>
+ #include <freertos/task.h>
+ #define DELAY(n) vTaskDelay((n) / portTICK_PERIOD_MS)
 #endif
 
 #include "vga_6bit.h"
@@ -375,16 +375,41 @@ static void setup_i2s_output(const unsigned char *pin_map)
   I2S1.sample_rate_conf.tx_bits_mod = 8;
   
   // clock setup
-  long freq = pixel_clock * 2;
-  int sdm, sdmn;
-  int odir = -1;
-  do {	
+  #ifdef use_lib_fix_double_precision
+   #ifdef use_lib_vga320x200          
+    //sdm:0x9D8A3 odir:0x0009
+    //(sdm & 0xff):0x00A3 (sdm >> 8):0x00D8 (sdm >> 16):0x0009    
+    unsigned int p0= 0x00A3;
+    unsigned int p1= 0x00D8;
+    unsigned int p2= 0x0009;
+    unsigned int p3= 0x0009;
+   #endif
+
+   #ifdef use_lib_debug_i2s
+    Serial.printf("bitluni pixel_clock:%d\n",pixel_clock);
+    Serial.printf("bitluni p0:0x%04X p1:0x%04X p2:0x%04X p3:0x%04X \n",p0,p1,p2,p3);
+   #endif
+
+   rtc_clk_apll_enable(true, p0, p1, p2, p3);  
+  #else
+   long freq = pixel_clock * 2;
+   int sdm, sdmn;
+   int odir = -1;
+   do {	
     odir++;
     sdm  = long((double(freq) / (20000000. / (odir + 2    ))) * 0x10000) - 0x40000;
     sdmn = long((double(freq) / (20000000. / (odir + 2 + 1))) * 0x10000) - 0x40000;
-  } while(sdm < 0x8c0ecL && odir < 31 && sdmn < 0xA1fff);
-  if (sdm > 0xA1fff) sdm = 0xA1fff;
-  rtc_clk_apll_enable(true, sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16, odir);
+   } while(sdm < 0x8c0ecL && odir < 31 && sdmn < 0xA1fff);
+   if (sdm > 0xA1fff) sdm = 0xA1fff;
+
+   #ifdef use_lib_debug_i2s
+    Serial.printf("bitluni freq:%ld pixel_clock:%d\n",freq,pixel_clock);
+    Serial.printf("bitluni sdm:0x%04X odir:0x%04X\n",sdm,odir);
+    Serial.printf("bitluni (sdm & 0xff):0x%04X (sdm >> 8):0x%04X (sdm >> 16):0x%04X\n",sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16);      
+   #endif
+
+   rtc_clk_apll_enable(true, sdm & 0xff, (sdm >> 8) & 0xff, sdm >> 16, odir);
+  #endif 
 
   I2S1.clkm_conf.val = 0;
   I2S1.clkm_conf.clka_en = 1;
