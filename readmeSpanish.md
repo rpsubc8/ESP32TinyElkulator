@@ -16,6 +16,7 @@ He realizado varias modificaciones:.
  <li>Permite escala de pantalla en 320x200. Recordar que el acorn tiene 256 lineas.</li>
  <li>Versión precompilada (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colores)</li>
  <li>Sin emulación de sonido, por ahora.</li>
+ <li>Opción de eliminar el cálculo de redondeo IEEE (double) de la VGA, para evitar problemas de precisión. Encontrada esta anomalía a partir del fallo encontrado por David Crespo Tascón al no sacar video.</li>
  <li>
    Faltan teclas por mapear:
    <center><img src='preview/keymatrix.gif'></center>
@@ -33,6 +34,8 @@ He realizado varias modificaciones:.
 <h1>Versión precompilada</h1>
   En la carpeta <b>precompile</b> hay una versión ya compilada para ser guardada con la herramienta de descarga flash 3.9.2. Es una versión con resolución 320x200 (DAC 3 bits, 8 colores) con los juegos de demostración en FLASH.<br><br>
 <a href='https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200'>https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200</a>
+<br>
+También se ha añadido la opción de 320x200 sin cálculo IEEE.
 <br><br>
 Debemos elegir el tipo ESP32:
 <center><img src='preview/flash00.gif'></center>
@@ -93,11 +96,13 @@ Se permite cargar:
 <h1>Opciones</h1>
 El archivo <b>gbConfig.h</b> se seleccionan las opciones:
 <ul>  
- <li><b>use_lib_320x200:</b> Modo 320x200</li>
+ <li><b>use_lib_vga320x200:</b> Modo 320x200</li>
+ <li><b>use_lib_320x200:</b> Muestra 200 lineas en, lugar de 256 en 320x200/li>
  <li><b>use_lib_vga8colors:</b> Modo 8 colores (3 bits RGB) o 64 colores (6 bits RRGGBB)</li>
  <li><b>use_lib_log_serial:</b> Se envian logs por puerto serie usb</li>
  <li><b>FIX_PERIBOARD_NOT_INITING:</b> Solución de David Crespo Tascón para teclados que no se inicializan.</li>
  <li><b>gb_ms_keyboard:</b> Se debe especificar el número de milisegundos de polling para el teclado.</li> 
+ <li><b>use_lib_fix_double_precision:</b> No usa el cálculo de frecuencia de video VGA con el propio ESP32, evitando posibles problemas de precisión con la mantisa. Es útil para ESP32's que calculen mal la frecuencia.</li>
 </ul>
 
 
