@@ -16,6 +16,7 @@ I have made several modifications:
  <li>Screen scale</li>
  <li>Precompiled version (flash download 3.9.2) 320x200 (DAC 3 bits, 8 colors)</li>
  <li>No sound emulation for the time being.</li>
+ <li>Option to remove the IEEE (double) rounding calculation from the VGA, to avoid accuracy issues. This anomaly was found as a result of David Crespo Tascón's failure to take video.</li>
  <li>
    There are no keys to be mapped:
    <center><img src='preview/keymatrix.gif'></center>
@@ -33,6 +34,8 @@ I have made several modifications:
 <h1>Precompiled version</h1>
 In the precompile folder there is a version already compiled to be saved with the flash download tool 3.9.2. It is a version with 320x200 resolution (DAC 3 bits, 8 colors) with the demo games in FLASH.<br><br>
 <a href='https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200'>https://github.com/rpsubc8/ESP32TinyElkulator/tree/main/esp32/precompile/320x200</a>
+<br>
+A 320x200 option without IEEE calculation has also been added.
 <br><br>
 We must choose the ESP32 type:
 <center><img src='preview/flash00.gif'></center>
@@ -98,11 +101,13 @@ Loading is allowed:
 <h1>Options</h1>
 The file <b>gbConfig.h</b> options are selected:
 <ul>   
- <li><b>use_lib_320x200:</b> 320x200 mode</li>
+ <li><b>use_lib_vga320x200:</b> 320x200 mode</li>
+ <li><b>use_lib_320x200:</b> Displays 200 lines in, instead of 256 in 320x200</li>
  <li><b>use_lib_vga8colors:</b> 8-color (3-bit RGB) or 64-color (6-bit RRGGBB) mode</li>
  <li><b>use_lib_log_serial:</b> Logs are sent by serial port usb</li>
  <li><b>FIX_PERIBOARD_NOT_INITING:</b> David Crespo Tascón's solution for keyboards that do not initialize.</li>
  <li><b>gb_ms_keyboard:</b> You must specify the number of milliseconds of polling for the keyboard.</li>
+ <li><b>use_lib_fix_double_precision:</b> It doesn't use the VGA video frequency calculation with the ESP32 itself, avoiding possible accuracy problems with the mantissa. This is useful for ESP32's that miscalculate the frequency.</li>
 </ul>
 
 
