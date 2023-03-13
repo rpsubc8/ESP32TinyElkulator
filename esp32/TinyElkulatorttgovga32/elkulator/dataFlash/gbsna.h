@@ -3,7 +3,7 @@
 
  //#include <stddef.h>
 
- #include "sna/crazeerider.h"
+ #include "sna/snacrazeerider.h"
  #include "sna/snaInvaders.h"
  #include "sna/snaKillergorilla.h"
  #include "sna/snaStockcar.h"
